@@ -12,6 +12,7 @@
     "framer-motion": "^12.5.0",
     "jspdf": "^2.5.2",
     "lucide-react": "^0.511.0",
+    "palmistry-vercel-root": "file:..",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },

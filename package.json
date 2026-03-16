@@ -1,0 +1,7 @@
+{
+  "name": "palmistry-vercel-root",
+  "private": true,
+  "scripts": {
+    "vercel-build": "npm install --prefix frontend && npm run build --prefix frontend && node scripts/vercel-build.mjs"
+  }
+}
