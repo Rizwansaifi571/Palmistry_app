@@ -1,0 +1,14 @@
+[project]
+name = "palmistry-app"
+version = "1.0.0"
+description = "Palmistry frontend and Flask API for Vercel deployment"
+requires-python = ">=3.12"
+dependencies = [
+  "Flask==3.1.0",
+  "Flask-Cors==5.0.1",
+  "python-dotenv==1.0.1",
+  "requests==2.32.3",
+  "openai==1.68.2",
+  "google-generativeai==0.8.4",
+  "waitress==3.0.2"
+]
