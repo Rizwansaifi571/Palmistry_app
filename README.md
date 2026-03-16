@@ -162,6 +162,29 @@ VITE_API_BASE_URL=https://your-backend-domain.com
 
 This app has image + AI + voice workloads, which are more stable on a persistent Python backend service than on strict serverless limits.
 
+### Single-project Vercel deployment (Frontend + Backend together)
+
+This repository already includes `vercel.json` for one-click monorepo deployment.
+
+1. Import the GitHub repo into Vercel.
+2. Keep project root as repository root (do not set `frontend` as root).
+3. Add environment variables in Vercel project settings:
+  - `AI_PROVIDER`
+  - `GROQ_API_KEY` (or OpenAI/Gemini keys depending on provider)
+  - `GROQ_MODEL` (optional)
+  - `ELEVENLABS_API_KEY` (optional)
+  - `ELEVENLABS_VOICE_ID` (optional)
+  - `REQUIRE_PAID_SESSION`
+  - `SESSION_PRICE_INR`
+  - `SESSION_DURATION_MINUTES`
+  - `SESSION_MAX_QUESTIONS`
+  - `STRICT_PALM_VALIDATION`
+4. Deploy.
+
+With this setup:
+- Frontend is served from `frontend/dist`.
+- Backend API is served by Flask at `/api/*` in the same Vercel project.
+
 ---
 
 ## Troubleshooting
