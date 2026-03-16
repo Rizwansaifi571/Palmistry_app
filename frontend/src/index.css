@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800&family=Manrope:wght@400;500;600;700&display=swap');
+@import 'tailwindcss';
+
+:root {
+  color-scheme: dark;
+  font-family: 'Manrope', sans-serif;
+  background: #020617;
+  --display-font: 'Orbitron', sans-serif;
+}
+
+.font-display {
+  font-family: var(--display-font);
+}
+
+.font-sans {
+  font-family: 'Manrope', sans-serif;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at top, rgba(30, 64, 175, 0.28), transparent 28%),
+    radial-gradient(circle at 80% 10%, rgba(168, 85, 247, 0.22), transparent 24%),
+    #020617;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+.grid-pattern {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+  background-size: 42px 42px;
+  -webkit-mask-image: radial-gradient(circle at center, black 45%, transparent 90%);
+  mask-image: radial-gradient(circle at center, black 45%, transparent 90%);
+}
+
+.scanner-glow {
+  background:
+    radial-gradient(circle at center, rgba(56, 189, 248, 0.12), transparent 24%),
+    radial-gradient(circle at 20% 0%, rgba(96, 165, 250, 0.18), transparent 30%),
+    radial-gradient(circle at 80% 10%, rgba(168, 85, 247, 0.2), transparent 32%),
+    linear-gradient(180deg, rgba(2, 6, 23, 1), rgba(3, 7, 18, 1));
+}
+
+.scan-lines {
+  background-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(34, 211, 238, 0.08) 40%,
+    rgba(34, 211, 238, 0.18) 50%,
+    rgba(34, 211, 238, 0.08) 60%,
+    transparent 100%
+  );
+  background-size: 100% 18%;
+  animation: scan-lines 5s linear infinite;
+}
+
+.hand-guide {
+  box-shadow:
+    0 0 18px rgba(34, 211, 238, 0.45),
+    0 0 42px rgba(34, 211, 238, 0.18),
+    inset 0 0 32px rgba(34, 211, 238, 0.18);
+}
+
+.scanner-beam {
+  animation: scanner-beam 2.8s ease-in-out infinite;
+}
+
+.audio-bars {
+  display: inline-flex;
+  gap: 4px;
+}
+
+.audio-bars span {
+  width: 3px;
+  height: 14px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #67e8f9, #a855f7);
+  animation: audio-pulse 0.9s ease-in-out infinite;
+}
+
+.audio-bars span:nth-child(2) {
+  animation-delay: 0.14s;
+}
+
+.audio-bars span:nth-child(3) {
+  animation-delay: 0.28s;
+}
+
+.audio-bars span:nth-child(4) {
+  animation-delay: 0.42s;
+}
+
+.thinking-dots span {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-right: 6px;
+  border-radius: 999px;
+  background: #67e8f9;
+  animation: thinking 1.15s infinite ease-in-out;
+}
+
+.thinking-dots span:nth-child(2) {
+  animation-delay: 0.16s;
+}
+
+.thinking-dots span:nth-child(3) {
+  animation-delay: 0.32s;
+}
+
+@keyframes scan-lines {
+  from {
+    transform: translateY(-20%);
+  }
+  to {
+    transform: translateY(420%);
+  }
+}
+
+@keyframes scanner-beam {
+  0%,
+  100% {
+    transform: translateY(-130px);
+  }
+  50% {
+    transform: translateY(130px);
+  }
+}
+
+@keyframes audio-pulse {
+  0%,
+  100% {
+    transform: scaleY(0.45);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scaleY(1.25);
+    opacity: 1;
+  }
+}
+
+@keyframes thinking {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.35;
+  }
+  50% {
+    transform: translateY(-4px);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .grid-pattern {
+    background-size: 28px 28px;
+  }
+}
